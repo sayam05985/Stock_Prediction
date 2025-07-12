@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* 🎥 Fullscreen video background */
+    #bgVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    /* 💎 Glass container */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 60px auto;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #eee;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #f1f1f1;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
+    }
+
+    button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 30px 15px;
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="static/background.mp4.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Glassy Container -->
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>If you have any questions, suggestions, or feedback regarding our Stock Price Prediction Application, please feel free to contact us using the form below.</p>
+
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user_name" placeholder="Your Name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="user_email" placeholder="you@example.com" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="user_message" rows="6" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("9boz8Y3KArQBsbp8l"); // Replace with your EmailJS Public Key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      emailjs.sendForm("service_gl7cu9s", "template_osf37ne", this)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          this.reset();
+        }, (error) => {
+          alert("❌ Failed to send message. Please check your EmailJS settings.");
+          console.error("EmailJS Error:", error);
+        });
+    });
+  </script>
+
+</body>
+</html>

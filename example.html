@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>LightPoint Financial Technology</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <!-- 🔁 Background Video -->
+  <video autoplay loop muted playsinline id="bgVideo">
+    <source src="static/background.mp4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- ✅ Transparent Navbar -->
+  <header class="bg-black/50 backdrop-blur-md text-white sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center">
+        <img src="https://storage.googleapis.com/a1aa/image/jUrGDBx2UqAE5S9IOt4Hj7Blpku7VwmBleEjDeaRkZQ.jpg" alt="LightPoint Logo" class="h-10 w-10" />
+        <span class="ml-3 text-lg font-bold">LightPoint</span>
+      </div>
+      <nav class="space-x-6">
+        <a class="hover:text-teal-300" href="#">About</a>
+        <a class="hover:text-teal-300" href="#">Technology</a>
+        <a class="hover:text-teal-300" href="#">Blog</a>
+        <a class="hover:text-teal-300" href="#">Press Releases</a>
+        <a class="hover:text-teal-300" href="#">Biography</a>
+        <a class="hover:text-teal-300" href="#">Contact</a>
+        <a class="hover:text-teal-300" href="#">Subscription</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🔥 Hero Section on Video -->
+  <section class="flex items-center justify-center text-center h-screen">
+    <h1 class="text-4xl md:text-5xl font-bold max-w-4xl px-4">"FLATTENING" THE WORLD OF TRADING, RISK & ANALYTICS TECHNOLOGY</h1>
+  </section>
+
+  <!-- 🚀 Floating Card Section -->
+  <section class="py-16 bg-black/50 backdrop-blur-md">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Our Company Vision</h2>
+      <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+        <div class="flex-1">
+          <div class="p-6 border rounded-lg bg-white/20 backdrop-blur-md">
+            <i class="fas fa-chart-line text-4xl text-teal-300 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">CROSS ASSET TRADING & RISK</h3>
+            <p class="text-white mb-4">Our platform provides a single system for cross-asset trading and risk management.</p>
+            <a href="#" class="text-teal-300 font-semibold">Read more</a>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="p-6 border rounded-lg bg-white/20 backdrop-blur-md">
+            <i class="fas fa-cloud text-4xl text-teal-300 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">FINTECH ARCHITECTURE</h3>
+            <p class="text-white mb-4">Our architecture runs as a cloud-native application and scales across multiple regions.</p>
+            <a href="#" class="text-teal-300 font-semibold">Read more</a>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="p-6 border rounded-lg bg-white/20 backdrop-blur-md">
+            <i class="fas fa-headset text-4xl text-teal-300 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">CLIENT DRIVEN SUPPORT</h3>
+            <p class="text-white mb-4">We provide client-driven support to ensure satisfaction and success.</p>
+            <a href="#" class="text-teal-300 font-semibold">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧠 Info Section -->
+  <section class="py-16 bg-black/50 backdrop-blur-md">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <div class="flex-1 mb-8 md:mb-0">
+        <img src="https://storage.googleapis.com/a1aa/image/lBpZnXhcIGAwXERNQPkzi4NEECuqhalNN6IUc7nip0E.jpg" alt="LightPoint Trading Platform" class="w-full h-auto rounded-lg" />
+      </div>
+      <div class="flex-1 md:pl-16">
+        <h2 class="text-3xl font-bold mb-4">LightPoint</h2>
+        <p class="text-white mb-4">LightPoint has built a flexible and modern trading and risk platform employing the latest software design and infrastructure technologies. The platform provides a comprehensive solution for trading, risk management, and compliance.</p>
+        <p class="text-white mb-4">Our platform includes Portfolio management, trade execution, and support for various asset classes including equities, fixed income, and derivatives. Automated workflows and real-time analytics provide a competitive edge in the market.</p>
+        <p class="text-white mb-4">LightPoint continues to take an enterprise-wide and holistic approach by using innovative technologies and ensuring seamless integration with other financial systems.</p>
+        <a class="bg-teal-500 text-white py-2 px-4 rounded-lg" href="#">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

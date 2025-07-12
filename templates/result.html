@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        iframe {
+            display: block;
+            width: 100%;
+            height: 900px;
+            border: none;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    
+
+    <div class="toggle-button">
+        <div class="icon">&#9776;</div>
+    </div>
+
+    
+    
+    <div class="container">
+        <h1>Results for {{ stock_name }}</h1>
+        <h2>Best Model: {{ best_model }}</h2>
+
+        <h3>Model Predictions</h3>
+        
+        <div class="graphs-container">
+           
+            <iframe src="{{ lstm_graph }}"></iframe>
+        </div>
+
+        <div class="bottom-container">
+            <iframe src="{{ rnn_graph }}"></iframe>
+
+            <div class="input-section">
+                
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const sidebar = document.querySelector('.sidebar');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

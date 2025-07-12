@@ -1,0 +1,160 @@
+/* General styles */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Navbar stays fixed at the top */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Make the carousel (slider) full screen */
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Keeps it behind other elements */
+}
+
+.carousel img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Form Container (Centered on top of the background) */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 450px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 5; /* Keeps it above the background */
+}
+
+/* Form elements */
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar (Fixed at the Top) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Stock Price Prediction</a>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Explore</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Predict</a></li>
+                            <li><a class="dropdown-item" href="#">About usn</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">what else we have!</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background Slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/13825.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/13833.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/13938.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Form (Centered Over Background) -->
+    <div class="container">
+        <h2>Predict Stock Price</h2>
+        <form action="/predict" method="post">
+            <label for="stock_name">Stock Name:</label>
+            <input type="text" id="stock_name" name="stock_name" class="form-control" required>
+            
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" class="form-control" required>
+
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" class="form-control" required>
+
+            <button type="submit" class="btn btn-primary mt-3">Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
